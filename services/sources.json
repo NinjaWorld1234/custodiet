@@ -1,0 +1,142 @@
+{
+    "project_info": {
+        "name": "Custodiet",
+        "version": "1.0",
+        "last_update": "2026-02-17"
+    },
+    "selected_sources": [
+        {
+            "source_id": "natural_earthquakes_usgs_earthquakes_all_past_hour",
+            "title": "USGS Earthquakes (All - Past Hour)",
+            "category": "natural",
+            "subcategory": "earthquakes",
+            "reliability_tier": "A",
+            "endpoint": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+            "data_format": "geojson",
+            "update_frequency": "minute"
+        },
+        {
+            "source_id": "natural_weather_alerts_nws_active_alerts_all",
+            "title": "NWS Active Weather Alerts",
+            "category": "natural",
+            "subcategory": "weather_alerts",
+            "reliability_tier": "A",
+            "endpoint": "https://api.weather.gov/alerts/active",
+            "data_format": "geojson",
+            "update_frequency": "minute"
+        },
+        {
+            "source_id": "natural_multi_hazards_nasa_eonet_events",
+            "title": "NASA EONET Events",
+            "category": "natural",
+            "subcategory": "multi_hazards",
+            "reliability_tier": "A",
+            "endpoint": "https://eonet.gsfc.nasa.gov/api/v3/events",
+            "data_format": "json",
+            "update_frequency": "minute"
+        },
+        {
+            "source_id": "cyber_vulnerabilities_cisa_kev_catalog_json_feed",
+            "title": "CISA Known Exploited Vulnerabilities",
+            "category": "cyber",
+            "subcategory": "vulnerabilities",
+            "reliability_tier": "A",
+            "endpoint": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "data_format": "json",
+            "update_frequency": "daily"
+        },
+        {
+            "source_id": "cyber_vulnerabilities_nvd_cve_api_2_0",
+            "title": "NVD CVE API 2.0",
+            "category": "cyber",
+            "subcategory": "vulnerabilities",
+            "reliability_tier": "A",
+            "endpoint": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+            "data_format": "json",
+            "update_frequency": "daily"
+        },
+        {
+            "source_id": "cyber_threat_intel_otx_indicators_endpoint",
+            "title": "AlienVault OTX Indicators",
+            "category": "cyber",
+            "subcategory": "threat_intel",
+            "reliability_tier": "B",
+            "endpoint": "https://otx.alienvault.com/api/v1/indicators",
+            "data_format": "json",
+            "update_frequency": "minute",
+            "auth_required": true
+        },
+        {
+            "source_id": "cyber_malicious_urls_urlhaus_api_base",
+            "title": "URLhaus Malicious URLs",
+            "category": "cyber",
+            "subcategory": "malicious_urls",
+            "reliability_tier": "B",
+            "endpoint": "https://urlhaus-api.abuse.ch/v1",
+            "data_format": "json",
+            "update_frequency": "minute"
+        },
+        {
+            "source_id": "geopolitics_conflict_protest_acled_api_events_endpoint",
+            "title": "ACLED Conflict Events",
+            "category": "geopolitics",
+            "subcategory": "conflict_protest",
+            "reliability_tier": "A",
+            "endpoint": "https://api.acleddata.com/acled/read",
+            "data_format": "json",
+            "update_frequency": "daily",
+            "auth_required": true
+        },
+        {
+            "source_id": "geopolitics_news_event_mining_gdelt_apis_base",
+            "title": "GDELT Project API",
+            "category": "geopolitics",
+            "subcategory": "news_event_mining",
+            "reliability_tier": "B",
+            "endpoint": "https://api.gdeltproject.org/api/v2",
+            "data_format": "json",
+            "update_frequency": "15min"
+        },
+        {
+            "source_id": "humanitarian_disasters_and_reports_reliefweb_disasters",
+            "title": "ReliefWeb Disasters",
+            "category": "humanitarian",
+            "subcategory": "disasters_and_reports",
+            "reliability_tier": "A",
+            "endpoint": "https://api.reliefweb.int/v1/disasters",
+            "data_format": "json",
+            "update_frequency": "minute"
+        },
+        {
+            "source_id": "environment_air_quality_openaq_air_quality_v3",
+            "title": "OpenAQ Air Quality",
+            "category": "environment",
+            "subcategory": "air_quality",
+            "reliability_tier": "A",
+            "endpoint": "https://api.openaq.org/v3",
+            "data_format": "json",
+            "update_frequency": "hourly",
+            "auth_required": true
+        },
+        {
+            "source_id": "infrastructure_geocoding_nominatim_geocoding",
+            "title": "OSM Nominatim Geocoding",
+            "category": "infrastructure",
+            "subcategory": "geocoding",
+            "reliability_tier": "B",
+            "endpoint": "https://nominatim.openstreetmap.org/search",
+            "data_format": "json",
+            "update_frequency": "on_demand"
+        },
+        {
+            "source_id": "infrastructure_osm_overpass_overpass_api_interpreter",
+            "title": "OSM Overpass API",
+            "category": "infrastructure",
+            "subcategory": "osm_overpass",
+            "reliability_tier": "B",
+            "endpoint": "https://overpass-api.de/api/interpreter",
+            "data_format": "xml_or_json",
+            "update_frequency": "on_demand"
+        }
+    ]
+}

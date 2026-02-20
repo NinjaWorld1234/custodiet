@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="h-full bg-slate-50 antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custodiet UI</title>
+    <meta name="description" content="Professional Dashboard with RTL and i18n support" />
+    <meta name="theme-color" content="#0f172a" />
+    
+    <!-- PWA Manifest Placeholder -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Fonts: Inter for Latin, Noto Sans Arabic for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mapbox GL CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans Arabic', 'sans-serif'],
+              arabic: ['Noto Sans Arabic', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+                950: '#082f49',
+              },
+              slate: {
+                850: '#151e2e', // Custom dark shade for operational panels
+              }
+            },
+            keyframes: {
+              "slide-in-right": {
+                "0%": { transform: "translateX(100%)" },
+                "100%": { transform: "translateX(0)" }
+              },
+              "slide-in-left": {
+                "0%": { transform: "translateX(-100%)" },
+                "100%": { transform: "translateX(0)" }
+              },
+              "fade-in": {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" }
+              },
+              "scale-in": {
+                "0%": { transform: "scale(0.95)", opacity: "0" },
+                "100%": { transform: "scale(1)", opacity: "1" }
+              }
+            },
+            animation: {
+              "slide-in-right": "slide-in-right 0.3s ease-out",
+              "slide-in-left": "slide-in-left 0.3s ease-out",
+              "fade-in": "fade-in 0.2s ease-out",
+              "scale-in": "scale-in 0.2s ease-out"
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar for dense UI */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* Mapbox Customizations */
+      .mapboxgl-popup-content {
+        padding: 0;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        overflow: hidden;
+      }
+      .mapboxgl-popup-close-button {
+        color: #64748b;
+        padding: 4px 8px;
+        font-size: 1.5rem;
+      }
+      .mapboxgl-ctrl-group {
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
+    "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@5.28.4?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.363.0?external=react,react-dom",
+    "recharts": "https://esm.sh/recharts@2.12.3?external=react,react-dom",
+    "clsx": "https://esm.sh/clsx@2.1.0",
+    "zustand": "https://esm.sh/zustand@4.5.2?external=react",
+    "zustand/": "https://esm.sh/zustand@4.5.2/",
+    "mapbox-gl": "https://esm.sh/mapbox-gl@3.2.0",
+    "leaflet": "https://esm.sh/leaflet@1.9.4",
+    "react-window": "https://esm.sh/react-window@1.8.10?external=react,react-dom",
+    "react-virtualized-auto-sizer": "https://esm.sh/react-virtualized-auto-sizer@1.0.24?external=react,react-dom",
+    "lodash/throttle": "https://esm.sh/lodash@4.17.21/throttle",
+    "lodash/": "https://esm.sh/lodash@4.17.21/",
+    "@vercel/node": "https://esm.sh/@vercel/node@^5.6.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="h-full overflow-hidden text-slate-900 selection:bg-primary-100 selection:text-primary-900">
+    <div id="root" class="h-full"></div>
+    <script>
+      // Mock Service Worker Registration
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          // navigator.serviceWorker.register('/sw.js'); 
+          console.log('Service Worker registered (mock)');
+        });
+      }
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

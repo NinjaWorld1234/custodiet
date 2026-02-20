@@ -1,0 +1,5 @@
+{
+  "name": "custodiet-ui",
+  "description": "A professional, information-dense dashboard with RTL support, i18n (AR/EN/DE), and PWA capabilities.",
+  "requestFramePermissions": []
+}
